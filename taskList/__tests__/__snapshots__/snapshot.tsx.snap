@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <main>
+      <h1>
+        To do:
+      </h1>
+      <input
+        value=""
+      />
+      <button>
+        Insert
+      </button>
+      <ul>
+        <div>
+          <div>
+            Marta Colvin Andrade
+          </div>
+          <button>
+            Delete
+          </button>
+        </div>
+        <div>
+          <div>
+            Lamidi Olonade Fakeye
+          </div>
+          <button>
+            Delete
+          </button>
+        </div>
+        <div>
+          <div>
+            Louise Nevelson
+          </div>
+          <button>
+            Delete
+          </button>
+        </div>
+      </ul>
+    </main>
+  </div>
+</div>
+`;
