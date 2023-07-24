@@ -51,3 +51,25 @@ code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
+
+.menu-item {
+  cursor: pointer;
+  padding: 5px;
+  height: 28px;
+}
+.menu-item:hover {
+  color: #2980b9;
+}
+
+.task {
+  background-color: #2980b9;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 8px;
+}

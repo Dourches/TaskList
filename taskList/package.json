@@ -10,7 +10,9 @@
   "dependencies": {
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "reactjs-popup": "^2.0.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "5.16.4",

@@ -3,28 +3,30 @@ import Task from './task'
 
 let nextId = 3;
 const initialLists = [
-  { id: 0, name: 'Marta Colvin Andrade' },
-  { id: 1, name: 'Lamidi Olonade Fakeye'},
-  { id: 2, name: 'Louise Nevelson'},
+  { key: 0, title: 'Work', description: 'On react' },
+  { key: 1, title: 'Eat', description: 'Good stuff'},
+  { key: 2, title: 'Rest', description: 'in peace'},
 ];
 
 export default function List() {
-  const [name, setName] = useState('');
+  const [title, setName] = useState('');
   const [lists, setLists] = useState(
     initialLists
   );
 
   function handleClick() {
-      const nextLists = lists.concat({ id: nextId++, name: name });
+    if (title !== "") {
+      const nextLists = lists.concat({ key: nextId++, title: title, description: '' });
       setLists(nextLists);
-    setName('');
+      setName('');
     }
-
+  }
+  
   return (
     <>
       <h1>To do:</h1>
       <input
-        value={name}
+        value={title}
         onChange={e => setName(e.target.value)}
       />
       <button onClick={handleClick}>
@@ -32,7 +34,7 @@ export default function List() {
       </button>
       <ul>
         {lists.map(list => (
-            <Task child={list} setLists={setLists} lists={lists} />
+          <Task key={list.key} child={list} setLists={setLists} lists={lists}/>
         ))}
       </ul>
     </>
