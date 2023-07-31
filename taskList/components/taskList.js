@@ -8,6 +8,8 @@ const initialLists = [
   { key: 2, title: 'Rest', description: 'in peace'},
 ];
 
+const type = "Task"; 
+
 export default function List() {
   const [title, setName] = useState('');
   const [lists, setLists] = useState(
@@ -23,7 +25,7 @@ export default function List() {
   }
   
   return (
-    <>
+    <div>
       <h1>To do:</h1>
       <input
         value={title}
@@ -33,10 +35,10 @@ export default function List() {
         Insert
       </button>
       <ul>
-        {lists.map(list => (
-          <Task key={list.key} child={list} setLists={setLists} lists={lists}/>
+        {lists.map((list, index) => (
+          <Task key={list.key} child={list} setLists={setLists} lists={lists} />
         ))}
-      </ul>
-    </>
+        </ul>
+      </div>
   );
 }
