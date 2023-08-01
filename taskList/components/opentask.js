@@ -1,28 +1,20 @@
 
-export default function OpenTask({ setList, lists, child }) {
-
-    function addAfter(array, index, newItem) {
-        return [
-            ...array.slice(0, index),
-            newItem,
-            ...array.slice(index)
-        ];
-    }
+export default function OpenTask({ dispatch, lists, child }) {
 
     function changeDescription(newDescription) {
-        const item = lists.find(a => a.key == child.key)
-        const itemIndex = lists.findIndex(a => a.key == child.key)
-        const nextLists = lists.filter(a => a.key !== child.key);
-        item.description = newDescription
-        setList(addAfter(nextLists, itemIndex, item))
+        dispatch({
+            type: 'changedDescription',
+            key: child.key,
+            description: newDescription,
+          });
     }
 
     function changeTitle(newTitle) {
-        const item = lists.find(a => a.key == child.key)
-        const itemIndex = lists.findIndex(a => a.key == child.key)
-        const nextLists = lists.filter(a => a.key !== child.key);   
-        item.title = newTitle
-        setList(addAfter(nextLists, itemIndex, item))
+        dispatch({
+            type: 'changedTitle',
+            key: child.key,
+            title: newTitle,
+          });
     }
 
     return (
